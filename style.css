@@ -111,6 +111,19 @@ header h1 {
   margin-bottom: 0.3rem;
 }
 
+.pdf-link {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--color-text-light);
+  border: none;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.pdf-link:hover {
+  color: var(--color-text);
+}
+
 .contact {
   font-size: 0.88rem;
   color: var(--color-text-light);
