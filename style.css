@@ -1,0 +1,287 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-text: #1a1a1a;
+  --color-text-light: #555;
+  --color-border: #ddd;
+  --color-link: #1a1a1a;
+  --color-bg: #fff;
+  --sidebar-width: 160px;
+  --font-body: 'Iowan Old Style', 'Georgia', 'Times New Roman', serif;
+  --font-heading: -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif;
+}
+
+html {
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.75;
+}
+
+.layout {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr var(--sidebar-width);
+  gap: 0 4rem;
+}
+
+.container {
+  min-width: 0;
+}
+
+.sidebar {
+  position: sticky;
+  top: 5rem;
+  align-self: start;
+  height: fit-content;
+}
+
+.sidebar-inner {
+  border-left: 1px solid var(--color-border);
+  padding-left: 1.5rem;
+}
+
+.sidebar-name {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.4rem;
+}
+
+.sidebar a {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  text-decoration: none;
+  border: none;
+  transition: color 0.15s;
+}
+
+.sidebar a:hover {
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  transition: border-color 0.15s;
+}
+
+a:hover {
+  border-color: var(--color-text);
+}
+
+header {
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+}
+
+.contact {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+}
+
+.sep {
+  margin: 0 0.3em;
+  color: #bbb;
+}
+
+section {
+  margin-bottom: 2.8rem;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-light);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.35rem;
+  margin-bottom: 1.2rem;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 0.55rem;
+}
+
+.job {
+  margin-bottom: 2.2rem;
+}
+
+.job:last-child {
+  margin-bottom: 0;
+}
+
+.job-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  margin-bottom: 0.15rem;
+}
+
+.role {
+  font-size: 0.88rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.8rem;
+}
+
+.period {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  white-space: nowrap;
+}
+
+.entry {
+  margin-bottom: 1.2rem;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry + .entry {
+  padding-top: 0.8rem;
+  border-top: 1px solid #eee;
+}
+
+.edu {
+  margin-bottom: 0.5rem;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+}
+
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+}
+
+.pub {
+  margin-bottom: 1.2rem;
+}
+
+.pub:last-child {
+  margin-bottom: 0;
+}
+
+.pub-title {
+  font-style: italic;
+  margin-bottom: 0.15rem;
+}
+
+.pub-meta {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.3rem;
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+footer p {
+  font-size: 0.78rem;
+  color: #bbb;
+}
+
+@media print {
+  .layout {
+    padding: 2rem 0;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .layout {
+    display: block;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    display: block;
+    padding: 2rem 1.25rem;
+  }
+
+  .sidebar {
+    position: static;
+    margin-bottom: 2rem;
+  }
+
+  .sidebar-inner {
+    border-left: none;
+    padding-left: 0;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+  }
+
+  .sidebar ul {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .job-header {
+    flex-direction: column;
+  }
+}

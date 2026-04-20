@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hwang Doyeon — CV</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+
+    <main class="container">
+      <header>
+        <h1>Hwang Doyeon</h1>
+        <p class="contact">
+          <a href="mailto:waylake@waylake.com">waylake@waylake.com</a>
+          <span class="sep">&middot;</span>
+          <a href="https://github.com/waylake" target="_blank">GitHub</a>
+          <span class="sep">&middot;</span>
+          <a href="https://www.linkedin.com/in/waylake/" target="_blank">LinkedIn</a>
+        </p>
+      </header>
+
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          소프트웨어 엔지니어 황도연입니다. 복잡한 도메인을 이해하고 그것을 제품으로 만들어가는 일에 관심이 많습니다. 탄소회계, 임상시험, B2B SaaS 등 전문성이 높은 분야에서 일하며, 비개발자와의 협업을 통해 실제로 쓰이는 소프트웨어를 만들어왔습니다.
+        </p>
+        <p>
+          무엇을 만들 것인가와 함께 어떻게 운영할 것인가도 중요하게 생각합니다. 코드가 배포되고 사용자에게 닿기까지의 과정을 직접 설계하고 개선해왔으며, 최근에는 AI를 활용해 사람과 소프트웨어 사이의 간격을 줄이는 작업에 집중하고 있습니다.
+        </p>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+
+        <div class="job">
+          <div class="job-header">
+            <h3><a href="https://www.carbonlink.co.kr/" target="_blank">(주) 리뉴어스랩</a></h3>
+            <span class="period">2024.09 — present</span>
+          </div>
+          <p class="role">Tech Manager &middot; 풀스택 개발 및 인프라 관리</p>
+
+          <div class="entry">
+            <p>
+              소규모 팀에서 제품이 없던 상태로 시작해 여러 서비스를 기획부터 배포까지 만들어냈습니다. 사용자 피드백을 반영하는 개발 사이클을 처음부터 구축했고, 제품이 늘어나며 복잡해지는 인프라를 GitHub CI/CD와 온프레미스 환경에서 직접 관리했습니다.
+            </p>
+            <p>
+              대표적인 프로덕트는 기업의 탄소 배출량을 GHG Protocol 표준에 따라 자동 산정하는 TypeScript 라이브러리입니다. Scope 1, 2, 3 전 영역을 다중 가스 기준으로 추적하고, LaTeX 수식으로 계산 과정을 투명하게 제공합니다. 프레임워크 독립적인 아키텍처로 설계해 React, Next.js, Express 어디에서든 사용할 수 있도록 했습니다.
+            </p>
+            <p>
+              인프라는 Docker 기반 멀티 컨테이너 아키텍처에서 다수의 서비스가 통신하도록 구성했고, 원클릭 배포 파이프라인을 만들어 개발-배포 사이클을 단순화했습니다. 또한 B2B SaaS 환경에서 사용자 문의 대응과 기능 가이드를 위해 LLM 기반 Agent 시스템을 설계했고, 기업마다 상이한 비정형 데이터를 통합 스키마로 변환하는 AI 파이프라인도 구축했습니다.
+            </p>
+          </div>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <h3><a href="https://medic.mediaiplus.com/" target="_blank">주식회사 메디아이플러스</a></h3>
+            <span class="period">2022.02 — 2024.03</span>
+          </div>
+          <p class="role">Developer</p>
+
+          <div class="entry">
+            <p>
+              전 세계 임상시험 데이터를 수집·정제해 빅데이터 구조로 통합하는 작업으로 시작했습니다. 기관마다 표기 방식과 스키마가 달라 이를 통합하는 것이 핵심 과제였고, Python과 MySQL로 수집-정제 파이프라인을 구축해 일일 자동 수집이 가능하도록 만들었습니다.
+            </p>
+            <p>
+              이후 임상시험 데이터를 제공하고 시각화하는 플랫폼을 기존 Tomcat + Spring Boot 레거시에서 React와 Express로 전면 마이그레이션했습니다. 프론트엔드는 React Chart로 데이터를 시각화하고 TanStack Query로 검색 성능을 개선했으며, 백엔드는 JWT 인증과 AWS RDS 자동 백업을 연동했습니다. 배포는 Jenkins, Terraform, Ansible을 조합해 IaC 방식으로 전환했고 AWS Load Balancer까지 적용했습니다.
+            </p>
+            <p>
+              임상시험 Regulation과 Guidelines를 제공하는 웹 서비스도 개발했고, 오픈소스 LLM인 Vicuna를 사내 서버에 설치해 OpenAI 호환 API로 래핑한 뒤 프롬프트 엔지니어링을 활용한 데이터 정제 작업에도 적용했습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="publications">
+        <h2>Publications</h2>
+
+        <div class="pub">
+          <p class="pub-title"><a href="https://doi.org/10.23089/jdca.2026.8.3.010" target="_blank">How AI Research Views Dance: A Topic Modeling Analysis of Domestic and International Scholarly Index Databases</a></p>
+          <p class="pub-meta">김윤지, 황도연 &middot; 디지털문화아카이브지 (JDCA), KCI 등재, 2026</p>
+          <p>SCOPUS와 KCI에 색인된 AI-무용 연구 논문을 대상으로 토픽 모델링을 수행해 국내외 연구의 지식 구조를 비교 분석했습니다.</p>
+        </div>
+
+        <div class="pub">
+          <p class="pub-title"><a href="https://doi.org/10.23089/jdca.2024.7.2.001" target="_blank">유튜브 데이터 기반 한국 교방춤의 주제 유형 및 유사 표현 기법</a></p>
+          <p class="pub-meta">김윤지, 황도연 &middot; 디지털문화아카이브지 (JDCA), KCI 등재, 2024</p>
+          <p>YouTube Data API로 교방춤 영상 메타데이터를 수집하고, 감성 분석과 토픽 모델링을 통해 주제 유형과 시청자 인식 구조를 분석했습니다.</p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Technical Skills</h2>
+        <p>
+          TypeScript, Python, JavaScript &middot; React, Next.js, Express, FastAPI &middot; Docker, Terraform, Ansible, AWS &middot; MongoDB, PostgreSQL, MySQL &middot; GitHub Actions, Jenkins
+        </p>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <div class="edu">
+          <div class="edu-header">
+            <h3>한세사이버보안고등학교 — 해킹보안과</h3>
+            <span class="period">2019 — 2022</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="cert">
+          <div class="cert-header">
+            <h3>정보처리기능사</h3>
+            <span class="period">한국산업인력공단</span>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>&copy; 2026 Hwang Doyeon</p>
+      </footer>
+    </main>
+
+    <nav class="sidebar">
+      <div class="sidebar-inner">
+        <p class="sidebar-name">Hwang Doyeon</p>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+        </ul>
+      </div>
+    </nav>
+
+  </div>
+</body>
+</html>
