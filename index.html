@@ -50,8 +50,9 @@
           <p class="role">Tech Manager &middot; 풀스택 개발 · 인프라 · 개발 생산성</p>
 
           <p class="job-summary">
-            제품이 없던 5인 팀에 합류해 탄소회계 플랫폼 CarbonLink를 기획부터 배포·운영까지 만들었습니다. 계산 엔진과 웹앱, 비동기 워커,
-            AWS 인프라를 직접 담당했고, 2026년에는 팀이 커지면서 개발 기반(CI/CD·보안 기준선·기록)을 세우는 일로 범위를 넓혔습니다.
+            제품이 없던 5인 팀에 합류해 탄소회계 플랫폼 CarbonLink를 기획부터 배포·운영까지 만들었습니다. 계산 엔진, 웹앱, 비동기
+            worker, AWS 인프라를 직접 담당했고, 2026년에는 팀이 커지면서 개발 기반(CI/CD, 보안 기준선, 기록)을 세우는 일로
+            범위를 넓혔습니다.
           </p>
 
           <div class="projects">
@@ -60,12 +61,12 @@
               <div class="project-body">
                 <h4>CarbonLink <span class="subtle">— 기업 탄소 인벤토리 플랫폼</span></h4>
                 <ul>
-                  <li><strong>GHG Protocol Scope 1·2·3 산정 엔진</strong> — Scope 3 Category 1·2·3·4·6·7·8·9·13 산정식을 직접 구현하고,
-                    IEA·Ecoinvent·Exiobase 계수 DB를 정제해 적용했습니다.</li>
-                  <li><strong>이질적인 입력의 통합</strong> — 엑셀·문서 OCR·SAP ERP를 한 스키마로 받고, SAP 8종 6,600만 건을 원본
-                    식별자를 유지한 채 이관해 건수를 대조했습니다.</li>
-                  <li><strong>큰 연산을 큐 기반 워커로 분리</strong> — 배출량 재계산·보고서 PDF·요약 집계를 워커로 나누고, 언어가 다른
-                    서비스 사이만 언어 중립 프로토콜로 연결했습니다.</li>
+                  <li><strong>GHG Protocol Scope 1·2·3 배출량 계산</strong> — Scope 3는 Category 1·2·3·4·6·7·8·9·13의 계산식을 직접
+                    구현하고, IEA·Ecoinvent·Exiobase 등 배출계수(emission factor) DB를 정제해 적용했습니다.</li>
+                  <li><strong>제각각인 업로드 데이터를 한 스키마로</strong> — Excel, 문서 OCR, SAP ERP를 같은 모델로 받고, SAP 8종
+                    6,600만 건을 원본 ID 그대로 옮겨 건수를 대조했습니다.</li>
+                  <li><strong>무거운 작업을 queue와 worker로 분리</strong> — 배출량 재계산, 보고서 PDF, 요약 집계를 worker로 나누고, 언어가
+                    다른 서비스 사이는 Redis Streams로 직접 연결했습니다.</li>
                 </ul>
               </div>
             </div>
@@ -73,12 +74,12 @@
             <div class="project">
               <p class="project-when">2025 —</p>
               <div class="project-body">
-                <h4>감사 대응 제품 <span class="subtle">— Audit-trail</span></h4>
+                <h4>감사 대응 <span class="subtle">— Audit trail</span></h4>
                 <ul>
-                  <li><strong>제3자 검증 대응 화면</strong> — 폴더·파일 드라이브, 다년도 비교, Scope 1·2 활동자료 시트를 한 화면에 묶어
-                    개발 환경까지 배포했습니다.</li>
-                  <li><strong>측정 가능한 감사추적</strong> — 10문항 Question Set을 시스템 조건으로 옮겨, 값을 남기는 쓰기 지점 7.3% →
-                    93.9%(865곳), 행위자 기록 1.1% → 99.2%까지 올렸습니다.</li>
+                  <li><strong>제3자 검증용 화면</strong> — 감사 자료(workpaper)를 폴더·파일 드라이브로 관리하고, 여러 해를 나란히
+                    비교하고, Scope 1·2 활동자료를 시트로 보는 화면을 개발 환경에 배포했습니다.</li>
+                  <li><strong>Audit trail을 지표로 측정</strong> — 10문항 Question Set을 시스템 조건으로 옮겨, 데이터를 바꾸는 지점 중
+                    이력이 남는 비율 7.3% → 93.9%(865곳), 누가 바꿨는지 기록되는 비율 1.1% → 99.2%까지 올렸습니다.</li>
                 </ul>
               </div>
             </div>
@@ -86,14 +87,12 @@
             <div class="project">
               <p class="project-when">2025 —</p>
               <div class="project-body">
-                <h4>인프라 · 릴리스</h4>
+                <h4>인프라 · 배포</h4>
                 <ul>
-                  <li><strong>AWS ECS 13개 서비스를 Terraform으로</strong> — Route53–ALB–ECS 구성, 서비스별 오토스케일,
-                    Redis Streams·Celery·BullMQ 큐를 언어 경계에 맞춰 분리했습니다.</li>
-                  <li><strong>사내 GitHub Actions 러너를 조직 단위로</strong> — 같은 검사가 40분 넘게 대기하던 것을 16초로 줄이고, 실행
-                    자리도 2개에서 5개로 늘렸습니다. 전용 계정·자동 재기동·자원 상한을 걸었습니다.</li>
-                  <li><strong>월 비용을 서비스 단위로 계량화</strong> — 구성 전체가 한 달 $2,734임을 밝히고, 중복 수집되던 감사 로그를
-                    정리해 월 약 $170를 줄였습니다.</li>
+                  <li><strong>AWS ECS 13개 서비스를 Terraform으로 관리</strong> — Route53–ALB–ECS 구성과 서비스별 auto scaling,
+                    Redis Streams·Celery·BullMQ queue를 언어별로 분리했습니다.</li>
+                  <li><strong>사내 GitHub Actions 실행 서버 도입</strong> — CI 검사가 40분 넘게 대기하던 것을 16초로 줄이고, 동시 실행
+                    자리를 2개에서 5개로 늘렸습니다. 전용 계정, 자동 재시작, 자원 상한을 함께 설정했습니다.</li>
                 </ul>
               </div>
             </div>
@@ -101,14 +100,14 @@
             <div class="project">
               <p class="project-when">2026 —</p>
               <div class="project-body">
-                <h4>relay <span class="subtle">— 엔지니어링 운영 기판</span></h4>
+                <h4>relay <span class="subtle">— 팀 협업 기록 도구</span></h4>
                 <ul>
-                  <li><strong>비동기 조정을 git 기반 신호 스트림으로</strong> — 규약을 문서가 아니라 결정론적 검사로 강제하고, 신호만 건드린
-                    PR은 검사 통과 시 사람 손 없이 머지됩니다.</li>
-                  <li><strong>주간 다이제스트 엔진(외부 의존성 0)</strong> — 리더·비개발 멤버가 코드를 열지 않고 진행·결정·블로커를 읽고,
-                    Notion 기획 33건을 GitHub Projects로 옮겨 보드와 기록의 경계를 세웠습니다.</li>
-                  <li><strong>상주 AI 관리자와 macOS 앱</strong> — 계약서·반응 워크플로로 읽히지 않는 기록을 지적하게 하고, SwiftUI 앱(외부
-                    패키지 0, 1.10.0)을 직접 만들었습니다.</li>
+                  <li><strong>비동기 협업을 git 기반 signal 스트림으로</strong> — 규칙을 문서가 아니라 자동 검사로 강제해서, signal만
+                    추가한 PR은 검사를 통과하면 사람 손 없이 merge됩니다.</li>
+                  <li><strong>주간 요약 자동 생성</strong> — 코드를 보지 않는 팀원도 진행 상황·결정·blocker를 읽을 수 있고, Notion에
+                    있던 기획 33건을 GitHub Projects로 옮겨 board와 기록의 역할을 나눴습니다.</li>
+                  <li><strong>AI 리뷰 봇과 macOS 앱</strong> — 규칙은 맞지만 읽히지 않는 기록을 지적하는 AI 리뷰어를 붙였고, 같은 데이터를
+                    보는 macOS 앱(SwiftUI, 외부 라이브러리 없이)을 직접 만들어 1.10.0까지 배포했습니다.</li>
                 </ul>
               </div>
             </div>
@@ -123,15 +122,14 @@
           <p class="role">Developer</p>
 
           <ul>
-            <li><strong>임상시험 데이터 통합</strong> — 전 세계 임상시험 데이터를 수집·정제해 빅데이터 구조로 통합하는 작업에서 시작해,
-              기관마다 다른 표기·스키마를 Python과 MySQL 파이프라인으로 합치고 일일 자동 수집까지 만들었습니다.</li>
-            <li><strong>레거시 전면 마이그레이션</strong> — Tomcat + Spring Boot를 React와 Express로 옮겼습니다. React Chart로 시각화하고
-              TanStack Query로 검색 성능을 개선했으며, JWT 인증과 AWS RDS 자동 백업을 연동했습니다.</li>
-            <li><strong>IaC 기반 배포 전환</strong> — Jenkins·Terraform·Ansible을 조합해 배포를 코드화하고 AWS Load Balancer를
+            <li><strong>임상시험 데이터 통합</strong> — 전 세계 임상시험 데이터를 수집·정제해 빅데이터 구조로 합쳤습니다. 기관마다 다른
+              표기와 스키마를 Python·MySQL pipeline으로 통합하고 매일 자동 수집했습니다.</li>
+            <li><strong>레거시 마이그레이션</strong> — Tomcat + Spring Boot를 React와 Express로 옮겼습니다. React Chart로 시각화하고
+              TanStack Query로 검색 속도를 개선했으며, JWT 인증과 AWS RDS 자동 백업을 연결했습니다.</li>
+            <li><strong>배포 자동화</strong> — Jenkins·Terraform·Ansible로 배포를 코드로 관리(IaC)하고 AWS Load Balancer를
               적용했습니다.</li>
-            <li><strong>규제·가이드라인 서비스</strong> — 임상시험 Regulation과 Guidelines를 제공하는 웹 서비스를 개발했고,
-              오픈소스 LLM Vicuna를 사내 서버에 설치해 OpenAI 호환 API로 램핑한 뒤 프롬프트 엔지니어링으로 데이터 정제에
-              적용했습니다.</li>
+            <li><strong>규제·가이드라인 서비스</strong> — 임상시험 Regulation과 Guidelines를 제공하는 웹 서비스를 만들었고, 오픈소스
+              LLM Vicuna를 사내 서버에 설치해 OpenAI 호환 API로 감싼 뒤 prompt engineering으로 데이터 정제에 사용했습니다.</li>
           </ul>
         </div>
       </section>
