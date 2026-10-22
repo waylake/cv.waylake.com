@@ -30,7 +30,7 @@
       <section id="about">
         <h2>About</h2>
         <p>
-          소프트웨어 엔지니어 황도연입니다. 도메인을 이해하고 그것을 제품으로 만들어가는 일에 관심이 많습니다. 탄소회계, 임상시험, B2B SaaS 등의분야에서 일하며, 비개발자와의 협업을
+          소프트웨어 엔지니어 황도연입니다. 도메인을 이해하고 그것을 제품으로 만들어가는 일에 관심이 많습니다. 탄소회계, 임상시험, B2B SaaS 등의 분야에서 일하며, 비개발자와의 협업을
           통해 실제로 쓰이는 소프트웨어를 만들어왔습니다.
         </p>
         <p>
@@ -47,23 +47,71 @@
             <h3><a href="https://www.carbonlink.co.kr/" target="_blank">(주) 리뉴어스랩</a></h3>
             <span class="period">2024.09 — present</span>
           </div>
-          <p class="role">Tech Manager &middot; 풀스택 개발 및 인프라 관리</p>
+          <p class="role">Tech Manager &middot; 풀스택 개발 · 인프라 · 개발 생산성</p>
 
-          <div class="entry">
-            <p>
-              소규모 팀에서 제품이 없던 상태로 시작해 여러 서비스를 기획부터 배포까지 만들어냈습니다. 사용자 피드백을 반영하는 개발 사이클을 처음부터 구축했고, 제품이 늘어나며 복잡해지는 인프라를
-              GitHub CI/CD와 온프레미스 환경에서 직접 관리했습니다.
-            </p>
-            <p>
-              기업의 탄소 배출량 산정 플랫폼을 GHG Protocol 표준에 따라 엔드투엔드로 구축했습니다. 각 조직의 복잡한 데이터 관리 환경에 맞춘 데이터 수집 기능, 수집 자동화, 수집된 데이터에
-              배출계수를 적용해 Scope 1·2·3 전 영역의 배출량을 다중 가스 기준으로 산정하는 엔진, 그리고 산정 결과를 대시보드에서 확인하는 전체 프로세스를 설계하고 개발했습니다.
-              특히 Scope 3의 Category 1·2·3·4·6·7·8·9·13을 직접 담당했으며, IEA, Ecoinvent, Exiobase 등 배출계수 데이터베이스를 정제 및 적용하고
-              각 Category에 맞는 산정식을 구현했습니다.
-            </p>
-            <p>
-              인프라는 Docker 기반 멀티 컨테이너 아키텍처에서 다수의 서비스가 통신하도록 구성했고, 원클릭 배포 파이프라인을 만들어 개발-배포 사이클을 단순화했습니다. 또한 B2B SaaS 환경에서
-              사용자 문의 대응과 기능 가이드를 위해 LLM 기반 Agent 시스템을 설계했고, 기업마다 상이한 비정형 데이터를 통합 스키마로 변환하는 AI 파이프라인도 구축했습니다.
-            </p>
+          <p class="job-summary">
+            제품이 없던 5인 팀에 합류해 탄소회계 플랫폼 CarbonLink를 기획부터 배포·운영까지 만들었습니다. 계산 엔진과 웹앱, 비동기 워커,
+            AWS 인프라를 직접 담당했고, 2026년에는 팀이 커지면서 개발 기반(CI/CD·보안 기준선·기록)을 세우는 일로 범위를 넓혔습니다.
+          </p>
+
+          <div class="projects">
+            <div class="project">
+              <p class="project-when">2024.09 —</p>
+              <div class="project-body">
+                <h4>CarbonLink <span class="subtle">— 기업 탄소 인벤토리 플랫폼</span></h4>
+                <ul>
+                  <li><strong>GHG Protocol Scope 1·2·3 산정 엔진</strong> — Scope 3 Category 1·2·3·4·6·7·8·9·13 산정식을 직접 구현하고,
+                    IEA·Ecoinvent·Exiobase 계수 DB를 정제해 적용했습니다.</li>
+                  <li><strong>이질적인 입력의 통합</strong> — 엑셀·문서 OCR·SAP ERP를 한 스키마로 받고, SAP 8종 6,600만 건을 원본
+                    식별자를 유지한 채 이관해 건수를 대조했습니다.</li>
+                  <li><strong>큰 연산을 큐 기반 워커로 분리</strong> — 배출량 재계산·보고서 PDF·요약 집계를 워커로 나누고, 언어가 다른
+                    서비스 사이만 언어 중립 프로토콜로 연결했습니다.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project">
+              <p class="project-when">2025 —</p>
+              <div class="project-body">
+                <h4>감사 대응 제품 <span class="subtle">— Audit-trail</span></h4>
+                <ul>
+                  <li><strong>제3자 검증 대응 화면</strong> — 폴더·파일 드라이브, 다년도 비교, Scope 1·2 활동자료 시트를 한 화면에 묶어
+                    개발 환경까지 배포했습니다.</li>
+                  <li><strong>측정 가능한 감사추적</strong> — 10문항 Question Set을 시스템 조건으로 옮겨, 값을 남기는 쓰기 지점 7.3% →
+                    93.9%(865곳), 행위자 기록 1.1% → 99.2%까지 올렸습니다.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project">
+              <p class="project-when">2025 —</p>
+              <div class="project-body">
+                <h4>인프라 · 릴리스</h4>
+                <ul>
+                  <li><strong>AWS ECS 13개 서비스를 Terraform으로</strong> — Route53–ALB–ECS 구성, 서비스별 오토스케일,
+                    Redis Streams·Celery·BullMQ 큐를 언어 경계에 맞춰 분리했습니다.</li>
+                  <li><strong>사내 GitHub Actions 러너를 조직 단위로</strong> — 같은 검사가 40분 넘게 대기하던 것을 16초로 줄이고, 실행
+                    자리도 2개에서 5개로 늘렸습니다. 전용 계정·자동 재기동·자원 상한을 걸었습니다.</li>
+                  <li><strong>월 비용을 서비스 단위로 계량화</strong> — 구성 전체가 한 달 $2,734임을 밝히고, 중복 수집되던 감사 로그를
+                    정리해 월 약 $170를 줄였습니다.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project">
+              <p class="project-when">2026 —</p>
+              <div class="project-body">
+                <h4>relay <span class="subtle">— 엔지니어링 운영 기판</span></h4>
+                <ul>
+                  <li><strong>비동기 조정을 git 기반 신호 스트림으로</strong> — 규약을 문서가 아니라 결정론적 검사로 강제하고, 신호만 건드린
+                    PR은 검사 통과 시 사람 손 없이 머지됩니다.</li>
+                  <li><strong>주간 다이제스트 엔진(외부 의존성 0)</strong> — 리더·비개발 멤버가 코드를 열지 않고 진행·결정·블로커를 읽고,
+                    Notion 기획 33건을 GitHub Projects로 옮겨 보드와 기록의 경계를 세웠습니다.</li>
+                  <li><strong>상주 AI 관리자와 macOS 앱</strong> — 계약서·반응 워크플로로 읽히지 않는 기록을 지적하게 하고, SwiftUI 앱(외부
+                    패키지 0, 1.10.0)을 직접 만들었습니다.</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -74,21 +122,17 @@
           </div>
           <p class="role">Developer</p>
 
-          <div class="entry">
-            <p>
-              전 세계 임상시험 데이터를 수집·정제해 빅데이터 구조로 통합하는 작업으로 시작했습니다. 기관마다 표기 방식과 스키마가 달라 이를 통합하는 것이 핵심 과제였고, Python과 MySQL로
-              수집-정제 파이프라인을 구축해 일일 자동 수집이 가능하도록 만들었습니다.
-            </p>
-            <p>
-              이후 임상시험 데이터를 제공하고 시각화하는 플랫폼을 기존 Tomcat + Spring Boot 레거시에서 React와 Express로 전면 마이그레이션했습니다. 프론트엔드는 React
-              Chart로 데이터를 시각화하고 TanStack Query로 검색 성능을 개선했으며, 백엔드는 JWT 인증과 AWS RDS 자동 백업을 연동했습니다. 배포는 Jenkins,
-              Terraform, Ansible을 조합해 IaC 방식으로 전환했고 AWS Load Balancer까지 적용했습니다.
-            </p>
-            <p>
-              임상시험 Regulation과 Guidelines를 제공하는 웹 서비스도 개발했고, 오픈소스 LLM인 Vicuna를 사내 서버에 설치해 OpenAI 호환 API로 래핑한 뒤 프롬프트
-              엔지니어링을 활용한 데이터 정제 작업에도 적용했습니다.
-            </p>
-          </div>
+          <ul>
+            <li><strong>임상시험 데이터 통합</strong> — 전 세계 임상시험 데이터를 수집·정제해 빅데이터 구조로 통합하는 작업에서 시작해,
+              기관마다 다른 표기·스키마를 Python과 MySQL 파이프라인으로 합치고 일일 자동 수집까지 만들었습니다.</li>
+            <li><strong>레거시 전면 마이그레이션</strong> — Tomcat + Spring Boot를 React와 Express로 옮겼습니다. React Chart로 시각화하고
+              TanStack Query로 검색 성능을 개선했으며, JWT 인증과 AWS RDS 자동 백업을 연동했습니다.</li>
+            <li><strong>IaC 기반 배포 전환</strong> — Jenkins·Terraform·Ansible을 조합해 배포를 코드화하고 AWS Load Balancer를
+              적용했습니다.</li>
+            <li><strong>규제·가이드라인 서비스</strong> — 임상시험 Regulation과 Guidelines를 제공하는 웹 서비스를 개발했고,
+              오픈소스 LLM Vicuna를 사내 서버에 설치해 OpenAI 호환 API로 램핑한 뒤 프롬프트 엔지니어링으로 데이터 정제에
+              적용했습니다.</li>
+          </ul>
         </div>
       </section>
 
