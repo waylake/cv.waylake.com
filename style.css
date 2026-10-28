@@ -373,12 +373,21 @@ footer p {
     display: none;
   }
 
+  footer {
+    display: none;
+  }
+
   .layout {
     display: block;
   }
 
   body {
-    font-size: 11pt;
+    font-size: 10.5pt;
+    line-height: 1.55;
+  }
+
+  .layout {
+    padding: 1.4rem 2.25rem 0;
   }
 }
 
