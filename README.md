@@ -1,5 +1,7 @@
 # 황도연 — CV
 
+English version: [cv.waylake.com](https://cv.waylake.com/) (this README is in Korean)
+
 소프트웨어 엔지니어입니다. 도메인을 이해하고 그것을 제품으로 만들어가는 일을 합니다.
 
 [waylake@waylake.com](mailto:waylake@waylake.com) · [GitHub](https://github.com/waylake) · [LinkedIn](https://www.linkedin.com/in/waylake) · [PDF 이력서](cv.pdf)
