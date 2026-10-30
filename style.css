@@ -128,6 +128,13 @@ header h1 {
   margin-bottom: 0.3rem;
 }
 
+header h1 .mark {
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: -0.17em;
+  margin-right: 0.4em;
+}
+
 .pdf-link {
   font-size: 0.85rem;
   font-weight: 400;
@@ -370,6 +377,10 @@ footer p {
   }
 
   .lang-switch {
+    display: none;
+  }
+
+  header h1 .mark {
     display: none;
   }
 
